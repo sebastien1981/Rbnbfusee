@@ -1,0 +1,11 @@
+<h2>Les fusees</h2>
+<ol>
+  <% @fusees.each do |fusee| %>
+    <li><%= link_to fusee.name, fusee_path(fusee) %></li>
+    <%= link_to "Delete",
+    fusee_path(fusee),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+  <% end %>
+</ol>
+<%= link_to "Créer une nouvelle fusee", new_fusee_path %>
